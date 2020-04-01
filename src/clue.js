@@ -144,8 +144,23 @@ const roomsArray = [
 ];
 
 // ITERATION 2
+// let weapon = Math.floor(Math.random() * weaponsArray.length);
+// let suspect = Math.floor(Math.random() * suspectsArray.length);
+// let room = Math.floor(Math.random() * roomsArray.length);
 
-let weapon = Math.floor(Math.random() * weaponsArray.length);
-let susepct = Math.floor(Math.random() * suspectsArray.length);
-let room = Math.floor(Math.random() * roomsArray.length);
+function selectRandom(arr) {
+    return arr[Math.floor(Math.random() * arr.length)];
+}
+
+function pickMystery() {
+    return card = {
+        suspect: selectRandom(suspectsArray),
+        weapon: selectRandom(weaponsArray),
+        room: selectRandom(roomsArray)
+    }
+}
 // ITERATION 3
+function revealMystery(card) {
+    //<FIRST NAME> <LAST NAME> killed Mr. Boddy using the <WEAPON> in the <ROOM>!
+    return (card.suspect.firstName + " " + card.suspect.lastName + " killed Mr. Boddy using the " + card.weapon.name + " in the " + card.room.name + "!")
+}
